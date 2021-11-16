@@ -83,7 +83,7 @@ public class toDoList implements Initializable {
                 descriptionText.getText());
 
         // Maxes out description characters
-        newTask.setDescription(newTask.getDescription().substring(0, Math.min(newTask.getDescription().length(), 100)));
+        newTask.setDescription(newTask.getDescription().substring(0, Math.min(newTask.getDescription().length(), 256)));
 
         // Clears inputs for future actions
         taskText.clear();
@@ -227,7 +227,7 @@ public class toDoList implements Initializable {
     // Edits task description
     public void editDescription(TableColumn.CellEditEvent editedCell) {
         Object todo = Table.getSelectionModel().getSelectedItem();
-        todo.setDescription(editedCell.getNewValue().toString().substring(0, Math.min(editedCell.getNewValue().toString().length(), 100)));
+        todo.setDescription(editedCell.getNewValue().toString().substring(0, Math.min(editedCell.getNewValue().toString().length(), 256)));
     }
 
     // Alert window message
