@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="337.0" prefWidth="566.0" style="-fx-background-color: azure;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.toDoList">
+    <children>
+        <TextField fx:id="taskText" layoutX="14.0" layoutY="13.0" prefHeight="25.0" prefWidth="100.0" promptText="Task" />
+        <TextField fx:id="descriptionText" layoutX="248.0" layoutY="13.0" prefHeight="25.0" prefWidth="175.0" promptText="Description" />
+        <DatePicker fx:id="datePicker" layoutX="127.0" layoutY="13.0" prefHeight="25.0" prefWidth="100.0" promptText="Due Date" />
+        <Button fx:id="addTask" layoutX="450.0" layoutY="59.0" mnemonicParsing="false" onAction="#addButton" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: skyblue;" text="Add" />
+        <Button fx:id="removeTask" layoutX="450.0" layoutY="99.0" mnemonicParsing="false" onAction="#removeButton" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: skyblue;" text="Remove" />
+        <Button fx:id="saveFile" layoutX="450.0" layoutY="225.0" mnemonicParsing="false" onAction="#saveButton" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: skyblue;" text="Save" />
+        <Button fx:id="loadFile" layoutX="450.0" layoutY="263.0" mnemonicParsing="false" onAction="#loadButton" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: skyblue;" text="Load" />
+        <RadioButton fx:id="existing" layoutX="323.0" layoutY="300.0" mnemonicParsing="false" onAction="#existingButtonClicked" prefHeight="25.0" prefWidth="100.0" text="Existing" />
+        <RadioButton fx:id="complete" layoutX="177.0" layoutY="300.0" mnemonicParsing="false" onAction="#completeButtonClicked" prefHeight="25.0" prefWidth="100.0" text="Complete" />
+        <RadioButton fx:id="incomplete" layoutX="14.0" layoutY="300.0" mnemonicParsing="false" onAction="#incompleteButtonClicked" prefHeight="25.0" prefWidth="100.0" text="Incomplete" />
+        <TableView fx:id="Table" layoutX="14.0" layoutY="59.0" prefHeight="230.0" prefWidth="425.0">
+            <columns>
+                <TableColumn fx:id="taskName" onEditCommit="#editTaskName" prefWidth="75.0" text="Item Name" />
+                <TableColumn fx:id="dueDate" prefWidth="75.0" text="Due Date" />
+                <TableColumn fx:id="completedYesNo" onEditCommit="#editCompleted" prefWidth="75.0" text="Completed" />
+                <TableColumn fx:id="descriptionColumn" onEditCommit="#editDescription" prefWidth="199.0" text="Description" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>
