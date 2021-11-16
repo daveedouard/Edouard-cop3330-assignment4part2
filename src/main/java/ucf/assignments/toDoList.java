@@ -229,7 +229,7 @@ public class toDoList implements Initializable {
         Object todo = Table.getSelectionModel().getSelectedItem();
         todo.setDescription(editedCell.getNewValue().toString().substring(0, Math.min(editedCell.getNewValue().toString().length(), 100)));
     }
-    
+
     // Alert window message
     private void errorMessge(String header, String content) {
         Alert alert = new Alert(Alert.AlertType.ERROR);

@@ -1,0 +1,41 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+class Main{
+    start(){}
+    main(){}
+}
+
+class Object{
+    Object(){}
+    getTaskName(){}
+    setTaskName(){}
+    getDescription(){}
+    setDescription(){}
+    getCompleted(){}
+    setCompleted(){}
+    getDueDate(){}
+    setDueDate(){}
+}
+
+class toDoList{
+    setStage(){}
+    initialize(){}
+    addButton(){}
+    removeButton(){}
+    existingButtonClicked(){}
+    completeButtonClicked(){}
+    incompleteButtonClicked(){}
+    saveButton(){}
+    loadButton(){}
+    editTaskname(){}
+    editCompleted(){}
+    editDueDate(){}
+    editDescription(){}
+    errorMessage(){}
+}
+Main *--> toDoList
+javafx.Application <|-- Main
+toDoList -- Object
+
+@enduml
